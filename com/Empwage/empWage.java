@@ -2,30 +2,46 @@ package com.Empwage;
 
 public class empWage {
 	public static void main(String[] args) {
+		int empHour;
+		final int full_time = 1;
+		final int part_time = 2;
+		int total_salary = 0;
+		int working_days = 20;
+		int empRateprHr = 20;
+		int f = 0;
+		int p = 0;
+		int s = 0;
+		for(int i=0; i<=working_days; i++){
+			
+			int empcheck = (int) Math.floor(Math.random()*3);
+
+			switch(empcheck) {
+				case full_time:
+					empHour = 8;
+					f++;
+					break;
+				case part_time:
+					empHour = 4;
+					p++;
+					break;
+				default:
+					empHour = 0;
+					s++;
+			}
+			
+			int salary = empRateprHr*empHour;
+			
+			total_salary += salary;
+		}
+	
+		System.out.println(f + " " + p + " " + s);
+		System.out.println("Monthly salary of employee is " + total_salary);
 		
-	// Constants
+	}
 
-    final int IS_PART_TIME = 1;
-    final int IS_FULL_TIME = 2;
-    final int EMP_RATE_PER_HOUR = 20;
+	
 
-    	// Initializing variables
-    	int EmpWage = 0, empHrs = 0;
 
-    	// Computations
-    	double empCheck = Math.floor(Math.random() * 10) % 3;
 
-    	if(empCheck == IS_FULL_TIME) {
-                empHrs = 8;
-             }
-           else if(empCheck == IS_PART_TIME) {
-                empHrs = 4;
-             }
-           else {
-                empHrs = 0;
-             }
-              EmpWage = empHrs * EMP_RATE_PER_HOUR;
-       System.out.println("To Calculate Dailly Employee Wage: "+EmpWage);
-  }
-}
+	}
 
