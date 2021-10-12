@@ -3,23 +3,24 @@ package com.Empwage;
 public class empWage {
 	public static void main(String[] args) {
 		
-			  // Constants
-	        final int IS_FULL_TIME = 1;
-	        final int EMP_RATE_PER_HOUR = 20;
+		final int EMP_CHECK = 1;
+		double random_val = Math.random()*10;
+		double empcheck = Math.floor(random_val) % 2;
 
-	        // Initializing variables
-	        int EmpWage = 0, empHrs = 0;
+		System.out.println("The random value generated for employee check is " + random_val);
 
-	        // Computations
-	        double empCheck = Math.floor(Math.random() * 10) % 2;
-
-	          if(empCheck == IS_FULL_TIME) {
-	               System.out.println("Employee is Present");
-	                 empHrs = 8;
-	                  }
-	               else {
-	                System.out.println("Employee is Absent");
+		//Condition statement
+		if(EMP_CHECK == empcheck){
+			int empRateprHr = 20;
+			int empHour = 8;
+			int salary = empRateprHr*empHour;
+			System.out.println("Employee per day salary is " + salary);
 		}
-
+		else{
+			int salary = 0;
+			System.out.println("Employee is Absent, so salary is " + salary);
 		}
+	}
+
+
 }
